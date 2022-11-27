@@ -8,6 +8,10 @@ import (
 	"os"
 	"sync"
 	"time"
+
+	"mgomez.net/internal/data"
+	"mgomez.net/internal/jsonlog.go"
+	"mgomez.net/internal/mailer"
 )
 
 // Version number
