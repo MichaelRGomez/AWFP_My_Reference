@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"golang.org/x/crypto/bcrypt"
+	"mgomez.net/internal/validator"
 )
 
 var (
