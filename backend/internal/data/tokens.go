@@ -28,7 +28,7 @@ type Token struct {
 }
 
 // The generate token function returns a token
-func generateqToken(userID int64, ttl time.Duration, scope string) (*Token, error) {
+func generateToken(userID int64, ttl time.Duration, scope string) (*Token, error) {
 	token := &Token{
 		UserID: userID,
 		Expiry: time.Now().Add(ttl),
@@ -65,7 +65,7 @@ type TokenModel struct {
 
 // Create and insert a token into the tokens table
 func (m TokenModel) New(userID int64, ttl time.Duration, scope string) (*Token, error) {
-	token, err := generateqToken(userID, ttl, scope)
+	token, err := generateToken(userID, ttl, scope)
 	if err != nil {
 		return nil, err
 	}
