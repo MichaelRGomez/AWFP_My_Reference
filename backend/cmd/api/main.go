@@ -9,6 +9,7 @@ import (
 	"sync"
 	"time"
 
+	_ "github.com/lib/pq"
 	"mgomez.net/internal/data"
 	"mgomez.net/internal/jsonlog.go"
 	"mgomez.net/internal/mailer"
