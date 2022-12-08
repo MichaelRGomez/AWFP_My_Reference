@@ -1,9 +1,9 @@
 {{/* Filename: MyReference/backend/internal/mailer/templates/user_welcome.templ */}}
-{{ define "subject" }}Welcome to Appletree!{{ end }}
+{{ define "subject" }}Welcome to MyReference!{{ end }}
 {{ define "plainBody" }}
 Hi, 
 
-Thank you for signing up for an Appletree account!
+Thank you for signing up for an MyReference account!
 We are excited to have you on board! 
 For future reference, please note that your indentification number
 is {{ .userID }}.
@@ -14,7 +14,7 @@ JSON body to activate your account:
 
 Thanks,
 
-The Appletree templates
+The MyReference templates
 {{ end }}
 
 {{ define "htmlBody" }}
@@ -28,7 +28,7 @@ The Appletree templates
     <body>
         <p>Hi,</p>
 
-        <p>Thank you for signing up for an Appletree account!</p>
+        <p>Thank you for signing up for an MyReference account!</p>
         <p>We are excited to have you on board!</p>
         <p>For future reference, please note that your indentification number</p>
         <p>is {{ .userID }}.</p>
@@ -38,7 +38,7 @@ The Appletree templates
         <pre><code>{"token":"{{.activationToken}}"}</code></pre>
 
         <p>Thanks,</p>
-        <p>The Appletree Team</p>
+        <p>The MyReference Team</p>
     </body>
 </html>
 {{ end }}
