@@ -74,9 +74,9 @@ func main() {
 	//These are flags for the mailer
 	flag.StringVar(&cfg.smtp.host, "smtp-host", "smpt.mailtrap.io", "SMPT host")
 	flag.IntVar(&cfg.smtp.port, "smtp-port", 25, "SMTP port")
-	flag.StringVar(&cfg.smtp.username, "smtp-username", "5e54def69b9279", "SMPT username")
-	flag.StringVar(&cfg.smtp.password, "smtp-password", "1f4d65023b4d66", "SMPT password")
-	flag.StringVar(&cfg.smtp.sender, "smtp-sender", "Appletree <no-reply@appletree.sophia.net>", "SMPT sender")
+	flag.StringVar(&cfg.smtp.username, "smtp-username", "148ede64e823ea", "SMPT username")
+	flag.StringVar(&cfg.smtp.password, "smtp-password", "50a32fd39278fe", "SMPT password")
+	flag.StringVar(&cfg.smtp.sender, "smtp-sender", "MyReference <no-reply@MyReference.sophia.net>", "SMPT sender")
 
 	//Use the flag.func() function to parse our trusted origins flag form a string to a []string
 	flag.Func("cors-trusted-origins", "Trusted CORS origin (space separated)", func(val string) error {
