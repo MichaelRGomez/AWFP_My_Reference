@@ -6,6 +6,7 @@ import (
 	"database/sql"
 	"flag"
 	"os"
+	"strings"
 	"sync"
 	"time"
 
@@ -40,6 +41,9 @@ type config struct {
 		password string
 		sender   string
 	}
+	cors struct {
+		trustedOrigins []string
+	}
 }
 
 // Dependency injection
@@ -73,6 +77,12 @@ func main() {
 	flag.StringVar(&cfg.smtp.username, "smtp-username", "5e54def69b9279", "SMPT username")
 	flag.StringVar(&cfg.smtp.password, "smtp-password", "1f4d65023b4d66", "SMPT password")
 	flag.StringVar(&cfg.smtp.sender, "smtp-sender", "Appletree <no-reply@appletree.sophia.net>", "SMPT sender")
+
+	//Use the flag.func() function to parse our trusted origins flag form a string to a []string
+	flag.Func("cors-trusted-origins", "Trusted CORS origin (space separated)", func(val string) error {
+		cfg.cors.trustedOrigins = strings.Fields(val)
+		return nil
+	})
 
 	flag.Parse()
 

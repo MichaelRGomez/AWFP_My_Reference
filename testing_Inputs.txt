@@ -1,0 +1,11 @@
+CORS Testing
+	Terminal: 1
+	go run ./cmd/api/ -cors-trusted-origins="http://localhost:9000 http://localhost:9090"
+
+	Terminal: 2
+	go run ./cmd/demo/cors/basic/ --addr=":9001"
+
+Authentication Testing
+		
+
+Authorization Testing
