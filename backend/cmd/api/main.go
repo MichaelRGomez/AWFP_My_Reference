@@ -72,10 +72,10 @@ func main() {
 	flag.BoolVar(&cfg.limiter.enabled, "limiter-enabled", true, "Rate limiter enabledS")
 
 	//These are flags for the mailer
-	flag.StringVar(&cfg.smtp.host, "smtp-host", "smpt.mailtrap.io", "SMPT host")
+	flag.StringVar(&cfg.smtp.host, "smtp-host", "smtp.mailtrap.io", "SMTP host")
 	flag.IntVar(&cfg.smtp.port, "smtp-port", 25, "SMTP port")
-	flag.StringVar(&cfg.smtp.username, "smtp-username", "148ede64e823ea", "SMPT username")
-	flag.StringVar(&cfg.smtp.password, "smtp-password", "50a32fd39278fe", "SMPT password")
+	flag.StringVar(&cfg.smtp.username, "smtp-username", "148ede64e823ea", "SMTP username")
+	flag.StringVar(&cfg.smtp.password, "smtp-password", "50a32fd39278fe", "SMTP password")
 	flag.StringVar(&cfg.smtp.sender, "smtp-sender", "MyReference <no-reply@MyReference.sophia.net>", "SMPT sender")
 
 	//Use the flag.func() function to parse our trusted origins flag form a string to a []string

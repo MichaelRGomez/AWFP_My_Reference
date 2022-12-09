@@ -4,13 +4,13 @@ package mailer
 import (
 	"bytes"
 	"embed"
-	"text/template"
+	"html/template"
 	"time"
 
 	"gopkg.in/mail.v2"
 )
 
-// go:embed "templates"
+//go:embed "templates"
 var templateFS embed.FS
 
 // Create mailer type
@@ -34,11 +34,6 @@ func New(host string, port int, username, password, sender string) Mailer {
 func (m Mailer) Send(recipient, templateFile string, data interface{}) error {
 	tmpl, err := template.New("email").ParseFS(templateFS, "templates/"+templateFile)
 	if err != nil {
-
-		println("")
-		println(err.Error())
-		println("")
-
 		return err
 	}
 
@@ -74,6 +69,10 @@ func (m Mailer) Send(recipient, templateFile string, data interface{}) error {
 	//Call Dail and Send()
 	err = m.dailer.DialAndSend(msg)
 	if err != nil {
+
+		println("")
+		println(err.Error())
+		println("")
 		return err
 	}
 	return nil

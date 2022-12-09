@@ -90,7 +90,7 @@ func (app *application) registerUserHandler(w http.ResponseWriter, r *http.Reque
 	}
 }
 
-func (app *application) activationUserHandler(w http.ResponseWriter, r *http.Request) {
+func (app *application) activateUserHandler(w http.ResponseWriter, r *http.Request) {
 	//Parse the plaintext activation token
 	var input struct {
 		TokenPlaintext string `json:"token"`
