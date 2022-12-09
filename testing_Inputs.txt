@@ -12,3 +12,6 @@ Authorization Testing
 
 For creating the user
 curl -i -d '{"name":"michael", "email":"mikegomez122@gmail.com", "password":"nullnull"}' localhost:4000/v1/users
+
+For activating the user
+curl -X PUT -d '' localhost:4000/v1/users/activated
